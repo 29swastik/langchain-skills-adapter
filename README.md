@@ -1,7 +1,7 @@
 # LangChain Skills Adapter
 This package provides an easy way to work with Agent Skills in your LangChain/LangGraph project by treating Skills as any other tool in LangChain, allowing you to easily integrate skills with existing workflows and agents. For developers, Skills work like any other LangChain tool.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## Installation
 
