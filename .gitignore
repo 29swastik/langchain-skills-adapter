@@ -83,3 +83,6 @@ dmypy.json
 .IMPLEMENTATION
 
 .agent
+
+.examples/pdf
+.examples/pptx
