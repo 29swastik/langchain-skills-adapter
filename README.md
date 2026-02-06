@@ -20,7 +20,7 @@ Scenario 1 - Direct skill directory:
 ```
 skills/
 └── pdf/
-    └── SKILL.md          # Skill name: "pdf"
+    └── SKILL.md
 ```
 Usage: `SkillTool(directories="skills/pdf")`
 
@@ -28,11 +28,11 @@ Scenario 2 - Parent directory with multiple skills:
 ```
 .copilot/skills/
 ├── pdf/
-│   └── SKILL.md          # Skill name: "pdf"
+│   └── SKILL.md
 ├── pptx/
-│   └── SKILL.md          # Skill name: "pptx"
+│   └── SKILL.md 
 └── excel/
-    └── SKILL.md          # Skill name: "excel"
+    └── SKILL.md
 ```
 Usage: `SkillTool(directories=".copilot/skills")`  # Discovers all three skills
 
@@ -41,12 +41,12 @@ Scenario 3 - Nested skill directories:
 skills/
 ├── documents/
 │   ├── pdf/
-│   │   └── SKILL.md      # Skill name: "pdf"
+│   │   └── SKILL.md
 │   └── word/
-│       └── SKILL.md      # Skill name: "word"
+│       └── SKILL.md 
 └── data/
     └── csv/
-        └── SKILL.md      # Skill name: "csv"
+        └── SKILL.md
 ```
 Usage: `SkillTool(directories="skills")`  # Recursively discovers all nested skills
 
@@ -54,11 +54,11 @@ Scenario 4 - Multiple parent directories:
 ```
 ~/.agents/skills/
 └── pdf/
-    └── SKILL.md          # Skill name: "pdf"
+    └── SKILL.md
 
 ./custom-skills/
 └── excel/
-    └── SKILL.md          # Skill name: "excel"
+    └── SKILL.md
 ```
 Usage: `SkillTool(directories=["~/.agents/skills", "./custom-skills"])`
 
@@ -71,15 +71,15 @@ skill_tool = SkillTool(directories=".agent/skills/")
 
 ## Example Usage
 ```py
+from langchain.agents import create_agent
 from langchain_community.agent_toolkits import FileManagementToolkit
 from langchain_community.tools import ShellTool
-
 from langchain_skills import SkillTool
 
-# Load skills from a directory
+# create skill tool
 skill_tool = SkillTool(directories=".agent/skills/")
 
-# Create tools
+# Create supporting tools to complement the skill
 file_management_toolkit = FileManagementToolkit(root_dir='..').get_tools()
 bash_tool = ShellTool()
 

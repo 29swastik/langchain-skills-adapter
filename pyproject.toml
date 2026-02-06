@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-skills-adapter"
-version = "0.1.1"
+version = "0.1.2"
 description = "Anthropic Agent Skills implementation for LangChain"
 readme = "README.md"
 requires-python = ">=3.10,<4.0.0"
