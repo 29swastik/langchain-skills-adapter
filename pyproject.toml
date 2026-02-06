@@ -44,10 +44,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/krishnamursw/langchain-skills-adapter"
-Repository = "https://github.com/krishnamursw/langchain-skills-adapter"
-Documentation = "https://github.com/krishnamursw/langchain-skills-adapter#readme"
-Issues = "https://github.com/krishnamursw/langchain-skills-adapter/issues"
+Homepage = "https://github.com/29swastik/langchain-skills-adapter"
+Repository = "https://github.com/29swastik/langchain-skills-adapter"
+Documentation = "https://github.com/29swastik/langchain-skills-adapter#readme"
+Issues = "https://github.com/29swastik/langchain-skills-adapter/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["langchain_skills"]
