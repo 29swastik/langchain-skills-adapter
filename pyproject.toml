@@ -1,0 +1,88 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-skills-adapter"
+version = "0.1.0"
+description = "Anthropic Agent Skills implementation for LangChain"
+readme = "README.md"
+requires-python = ">=3.10,<4.0.0"
+license = {text = "MIT"}
+authors = [
+    {name = "Swastik Krishnamurthy", email = "kswastik29@gmail.com"}
+]
+keywords = ["langchain", "agent-skills", "anthropic", "llm", "ai-agents"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "langchain>=1.2.8",
+    "langchain-core>=1.0.1,<2.0.0",
+    "langchain-experimental>=0.4.1",
+    "pydantic>=2.0.0,<3.0.0",
+    "PyYAML>=5.3.0,<7.0.0",
+    "typing-extensions>=4.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "langchain-openai>=1.1.7",
+    "pytest>=8.4.1,<9.0.0",
+    "pytest-asyncio>=0.20.3,<1.0.0",
+    "pytest-cov>=6.2.1,<7.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "types-pyyaml>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/krishnamursw/langchain-skills-adapter"
+Repository = "https://github.com/krishnamursw/langchain-skills-adapter"
+Documentation = "https://github.com/krishnamursw/langchain-skills-adapter#readme"
+Issues = "https://github.com/krishnamursw/langchain-skills-adapter/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["langchain_skills"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--cov=langchain_skills",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+markers = [
+    "unit: Unit tests for individual components",
+    "integration: Integration tests for end-to-end workflows",
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
