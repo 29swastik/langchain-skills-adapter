@@ -3,6 +3,14 @@ This package provides an easy way to work with Agent Skills in your LangChain/La
 
 ![alt text](image.png)
 
+## Installation
+
+Install from PyPI:
+
+```bash
+pip install langchain-skills-adapter
+```
+
 ## Create SkillTool
 SkillTool accepts 2 arguments: `directories` (required) and `description_template` (optional).
 
